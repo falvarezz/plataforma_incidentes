@@ -1,0 +1,16 @@
+# Material del curso (archivos pesados)
+*.pdf
+*.mp4
+*.mp3
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
