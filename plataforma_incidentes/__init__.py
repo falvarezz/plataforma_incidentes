@@ -8,12 +8,14 @@ from .index import Index
 from .router import Router
 from .text_analyzer import TextAnalyzer
 from .structures import Queue, Stack, PriorityQueue
+from .hash_table import HashTable
 from .search import busqueda_secuencial, busqueda_binaria, busqueda_bisect
 from .sorting import insertion_sort, merge_sort, python_sort
 
 __all__ = [
     "Event", "EventStore", "Index", "Router", "TextAnalyzer",
     "Queue", "Stack", "PriorityQueue",
+    "HashTable",
     "busqueda_secuencial", "busqueda_binaria", "busqueda_bisect",
     "insertion_sort", "merge_sort", "python_sort",
 ]
