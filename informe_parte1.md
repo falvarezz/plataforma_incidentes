@@ -11,19 +11,28 @@
 
 ### 1.1 Arquitectura general
 
-La plataforma se implementó como un paquete Python (`plataforma_incidentes/`) compuesto por cinco módulos independientes. Cada módulo encapsula una responsabilidad específica, lo que permite reemplazar o extender cualquier componente sin afectar al resto del sistema.
+El proyecto aplica el principio de **separación de responsabilidades** en dos niveles: el paquete principal `plataforma_incidentes/` concentra toda la lógica del dominio, mientras que los scripts en la raíz actúan como orquestadores de demostración y medición. Esta separación permite que el docente ejecute cada script de forma independiente para verificar el funcionamiento sin necesidad de modificar los módulos de lógica.
 
 ```
-plataforma_incidentes/
-├── event.py          # Entidad base del dominio
-├── event_store.py    # Repositorio central en memoria
-├── index.py          # Índice hash por atributo clave
-├── hash_table.py     # Tabla de dispersión propia
-├── router.py         # Grafo de rutas origen→destino
-├── structures.py     # Queue, Stack, PriorityQueue
-├── search.py         # Búsqueda secuencial, binaria, bisect
-└── sorting.py        # Insertion sort, merge sort, sorted()
+├── plataforma_incidentes/         # Paquete principal (lógica del sistema)
+│   ├── event.py                   # Entidad base del dominio
+│   ├── event_store.py             # Repositorio central en memoria
+│   ├── index.py                   # Índice hash por atributo clave
+│   ├── hash_table.py              # Tabla de dispersión propia
+│   ├── router.py                  # Grafo de rutas origen→destino
+│   ├── structures.py              # Queue, Stack, PriorityQueue
+│   ├── search.py                  # Búsqueda secuencial, binaria, bisect
+│   ├── sorting.py                 # Insertion sort, merge sort, sorted()
+│   └── __init__.py                # Exporta la interfaz pública del paquete
+│
+├── main.py                        # Demo de integración de todos los módulos
+├── paso2_estructuras.py           # Medición de estructuras lineales
+├── paso3_busqueda_ordenamiento.py # Medición de búsqueda y ordenamiento
+├── paso4_hashing.py               # Medición de hashing e índices
+└── paso5_sintesis.py              # Medición integradora (tiempo + memoria)
 ```
+
+Los scripts `paso*.py` son **reproducibles**: cada uno importa desde `plataforma_incidentes/` y genera las tablas de medición presentadas en este informe. `main.py` demuestra la integración completa con datos de ejemplo. Las instrucciones de ejecución se encuentran en `README.md`.
 
 ### 1.2 Descripción de clases
 
