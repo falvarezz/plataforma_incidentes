@@ -3,8 +3,10 @@
 *.mp4
 *.mp3
 
-# Informe académico (entrega separada)
+# Informes académicos (entrega separada)
 informe_parte1.*
+informe_parte2.*
+informe_style.css
 
 # Python
 __pycache__/
