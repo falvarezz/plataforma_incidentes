@@ -12,6 +12,8 @@ from .hash_table import HashTable
 from .search import busqueda_secuencial, busqueda_binaria, busqueda_bisect
 from .sorting import insertion_sort, merge_sort, python_sort
 from .avl_tree import AVLTree
+from .rsa_demo import RSADemo
+from .dinamica import knapsack, knapsack_optimizado
 
 __all__ = [
     "Event", "EventStore", "Index", "Router", "TextAnalyzer",
@@ -20,4 +22,6 @@ __all__ = [
     "busqueda_secuencial", "busqueda_binaria", "busqueda_bisect",
     "insertion_sort", "merge_sort", "python_sort",
     "AVLTree",
+    "RSADemo",
+    "knapsack", "knapsack_optimizado",
 ]
